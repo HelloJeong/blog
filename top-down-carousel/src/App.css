@@ -1,0 +1,19 @@
+.App {
+  text-align: center;
+}
+
+.slider {
+  height: 70px;
+  overflow: hidden;
+}
+
+.slider-view {
+  height: 100%;
+}
+
+.slider-item {
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
