@@ -162,4 +162,4 @@ console.log("3");
 - `setTimeout`, `fetch`, `fs` 등은 엔진이 아닌 **런타임 환경**(Web API / libuv)이 제공한다
 - 브라우저와 Node.js는 같은 V8을 쓰지만, 제공하는 **런타임 환경이 다르다**
 
-[게시글 모음 바로가기](https://github.com/hellojeong/blog)
+<a href="https://github.com/hellojeong/blog" target="_blank" rel="noopener noreferrer">게시글 모음 바로가기</a>

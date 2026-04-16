@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>02. Execution Context & Call Stack</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./visualization.css" />
+</head>
+<body class="bg-gray-950 text-gray-200 min-h-screen flex flex-col">
+
+  <!-- Header -->
+  <header class="border-b border-gray-800 px-6 py-4 flex items-center justify-between">
+    <div>
+      <h1 id="headerTitle" class="text-lg font-bold text-white"></h1>
+      <p id="headerDesc" class="text-sm text-gray-400 mt-1"></p>
+    </div>
+    <div class="lang-btn-group" role="group" aria-label="언어 전환">
+      <button id="btnLangKo" class="lang-btn active" onclick="handleLangSwitch('ko')" aria-pressed="true">KO</button>
+      <button id="btnLangEn" class="lang-btn" onclick="handleLangSwitch('en')" aria-pressed="false">EN</button>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="flex-1 flex flex-col lg:flex-row gap-0 overflow-hidden">
+
+    <!-- Left: Code Panel -->
+    <section class="lg:w-1/2 flex flex-col border-r border-gray-800 overflow-auto">
+      <div class="flex items-center justify-between px-4 py-2 border-b border-gray-800 bg-gray-900/60">
+        <span class="text-xs text-gray-500 mono">index.js</span>
+        <div class="flex gap-2">
+          <button id="btnPrev" onclick="handlePrev()" class="px-3 py-1 text-xs rounded bg-gray-800 hover:bg-gray-700 text-gray-300 transition disabled:opacity-30" disabled aria-label="이전 단계"></button>
+          <button id="btnNext" onclick="handleNext()" class="px-3 py-1 text-xs rounded bg-yellow-500/90 hover:bg-yellow-500 text-gray-900 font-semibold transition" aria-label="다음 단계"></button>
+          <button id="btnReset" onclick="handleReset()" class="px-3 py-1 text-xs rounded bg-gray-800 hover:bg-gray-700 text-gray-300 transition" aria-label="처음으로"></button>
+        </div>
+      </div>
+      <div id="codePanel" class="flex-1 overflow-auto text-sm leading-7 px-0 py-3 mono"></div>
+    </section>
+
+    <!-- Right: Visualization Panel -->
+    <section class="lg:w-1/2 flex flex-col overflow-auto">
+      <div class="flex items-center px-4 py-2 border-b border-gray-800 bg-gray-900/60">
+        <span class="text-xs text-gray-500">Call Stack</span>
+        <span id="stepBadge" class="ml-auto text-xs text-gray-500 mono"></span>
+      </div>
+      <div class="flex-1 flex flex-col p-6 gap-6">
+
+        <!-- Call Stack -->
+        <div class="flex-1 flex flex-col justify-end">
+          <div id="callStack" class="flex flex-col-reverse gap-2 min-h-[200px]"></div>
+          <div class="mt-2 border-t-2 border-dashed border-gray-700 pt-2 text-center text-xs text-gray-600 mono">
+            ── Stack Bottom ──
+          </div>
+        </div>
+
+        <!-- Description -->
+        <div id="description" class="rounded-lg bg-gray-900/80 border border-gray-800 p-4 text-sm text-gray-300 leading-relaxed min-h-[80px]"></div>
+
+        <!-- Console -->
+        <div>
+          <div class="text-xs text-gray-600 mb-1 mono">Console</div>
+          <div id="consoleOutput" class="mono text-xs bg-black/40 rounded border border-gray-800 p-3 min-h-[60px] max-h-[120px] overflow-auto text-green-400"></div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <script src="./visualization.js"></script>
+</body>
+</html>
