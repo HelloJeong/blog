@@ -11,7 +11,7 @@
 | 01  | JavaScript 엔진과 런타임 환경 | [01-javascript-engine-and-runtime.md](./javascript-core/01-javascript-engine-and-runtime.md) | ✅   |
 | 02  | 실행 컨텍스트와 콜 스택       | [02-execution-context.md](./javascript-core/02-execution-context.md)                         | ✅   |
 | 03  | 스코프와 클로저               | [03-scope-and-closure.md](./javascript-core/03-scope-and-closure.md)                         | ✅   |
-| 04  | this와 바인딩                 | [04-this-and-binding.md](./javascript-core/04-this-and-binding.md)                           | 📝   |
+| 04  | this와 바인딩                 | [04-this-and-binding.md](./javascript-core/04-this-and-binding.md)                           | ✅   |
 | 05  | 데이터 타입과 동등 비교       | [05-types-and-equality.md](./javascript-core/05-types-and-equality.md)                       | 📝   |
 | 06  | 참조와 복사                   | [06-reference-and-copy.md](./javascript-core/06-reference-and-copy.md)                       | 📝   |
 | 07  | 프로토타입과 클래스           | [07-prototype-and-class.md](./javascript-core/07-prototype-and-class.md)                     | 📝   |

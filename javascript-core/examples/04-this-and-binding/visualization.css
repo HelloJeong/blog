@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Pretendard:wght@400;500;600;700&display=swap');
+
+/* ─── Base ─── */
+body { font-family: 'Pretendard', sans-serif; }
+code, .mono { font-family: 'JetBrains Mono', monospace; }
+
+/* ─── Code line highlight ─── */
+.line-highlight { background: rgba(250, 204, 21, 0.18); border-left: 3px solid #facc15; }
+.line-default   { border-left: 3px solid transparent; }
+
+/* ─── Example card list ─── */
+.example-card {
+  border: 1px solid rgba(75, 85, 99, 0.5);
+  background: rgba(17, 24, 39, 0.6);
+  border-radius: 8px;
+  padding: 10px 12px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.example-card:hover      { border-color: rgba(250, 204, 21, 0.4); background: rgba(31, 41, 55, 0.8); }
+.example-card.active     { border-color: rgba(250, 204, 21, 0.8); background: rgba(250, 204, 21, 0.08); box-shadow: 0 0 0 2px rgba(250, 204, 21, 0.15); }
+.example-card.active .card-num { background: #facc15; color: #111827; }
+
+.card-num {
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  background: rgba(75, 85, 99, 0.5);
+  color: #d1d5db;
+  font-size: 11px;
+  font-weight: 600;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ─── Flow chart (5 binding rules) ─── */
+.rule-row {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid rgba(75, 85, 99, 0.35);
+  background: rgba(17, 24, 39, 0.5);
+  transition: all 0.25s ease;
+  gap: 10px;
+}
+.rule-row.active {
+  border-color: rgba(250, 204, 21, 0.8);
+  background: rgba(250, 204, 21, 0.1);
+  box-shadow: 0 0 0 2px rgba(250, 204, 21, 0.12);
+  transform: translateX(4px);
+}
+.rule-row.dimmed { opacity: 0.35; }
+
+.rule-badge {
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgba(75, 85, 99, 0.4);
+  color: #9ca3af;
+  letter-spacing: 0.03em;
+  flex-shrink: 0;
+}
+.rule-row.active .rule-badge { background: #facc15; color: #111827; font-weight: 700; }
+
+.rule-arrow { color: #6b7280; font-family: 'JetBrains Mono', monospace; }
+.rule-row.active .rule-arrow { color: #facc15; }
+
+/* ─── Connection diagram (dot-in-front link) ─── */
+.connection-box {
+  border: 1px solid rgba(75, 85, 99, 0.4);
+  background: rgba(17, 24, 39, 0.6);
+  border-radius: 8px;
+  padding: 14px 16px;
+  min-height: 80px;
+  position: relative;
+}
+
+.conn-obj {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  border: 1px solid rgba(139, 92, 246, 0.5);
+  background: rgba(139, 92, 246, 0.12);
+  color: #e9d5ff;
+  min-width: 70px;
+  text-align: center;
+}
+.conn-obj.ghost {
+  opacity: 0.45;
+  border-style: dashed;
+}
+.conn-obj.new-instance {
+  border-color: rgba(34, 197, 94, 0.6);
+  background: rgba(34, 197, 94, 0.12);
+  color: #bbf7d0;
+}
+.conn-obj.explicit {
+  border-color: rgba(59, 130, 246, 0.6);
+  background: rgba(59, 130, 246, 0.12);
+  color: #bfdbfe;
+}
+.conn-obj.lexical {
+  border-color: rgba(244, 114, 182, 0.55);
+  background: rgba(244, 114, 182, 0.12);
+  color: #fbcfe8;
+}
+
+.conn-line {
+  flex: 1;
+  height: 2px;
+  background: #6b7280;
+  position: relative;
+  margin: 0 4px;
+}
+.conn-line.broken {
+  background: transparent;
+  border-top: 2px dashed #ef4444;
+}
+.conn-line.broken::before {
+  content: '✕';
+  position: absolute;
+  top: -10px; left: 50%;
+  transform: translateX(-50%);
+  color: #ef4444;
+  font-size: 14px;
+  font-weight: 700;
+}
+.conn-line.lexical {
+  background: transparent;
+  border-top: 2px dashed #f472b6;
+}
+
+.this-result {
+  margin-top: 14px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: rgba(250, 204, 21, 0.08);
+  border: 1px solid rgba(250, 204, 21, 0.3);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+}
+.this-result .label { color: #9ca3af; margin-right: 8px; }
+.this-result .value { color: #facc15; font-weight: 700; }
+
+/* ─── Language Button Group (shared) ─── */
+.lang-btn-group {
+  display: flex;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #374151;
+}
+.lang-btn {
+  padding: 5px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  background: #111827;
+  color: #6b7280;
+  letter-spacing: 0.05em;
+  border: none;
+  outline: none;
+}
+.lang-btn:first-child { border-right: 1px solid #374151; }
+.lang-btn.active      { background: #facc15; color: #111827; }

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>04. this & Binding</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./visualization.css" />
+</head>
+<body class="bg-gray-950 text-gray-200 min-h-screen flex flex-col">
+
+  <!-- Header -->
+  <header class="border-b border-gray-800 px-6 py-4 flex items-center justify-between">
+    <div>
+      <h1 id="headerTitle" class="text-lg font-bold text-white"></h1>
+      <p id="headerDesc" class="text-sm text-gray-400 mt-1"></p>
+    </div>
+    <div class="lang-btn-group" role="group" aria-label="언어 전환">
+      <button id="btnLangKo" class="lang-btn active" onclick="handleLangSwitch('ko')" aria-pressed="true">KO</button>
+      <button id="btnLangEn" class="lang-btn" onclick="handleLangSwitch('en')" aria-pressed="false">EN</button>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="flex-1 flex flex-col lg:flex-row gap-0 overflow-hidden">
+
+    <!-- Left: Example list + code -->
+    <section class="lg:w-1/2 flex flex-col border-r border-gray-800 overflow-auto">
+
+      <!-- Example list -->
+      <div class="flex items-center px-4 py-2 border-b border-gray-800 bg-gray-900/60">
+        <span id="listLabel" class="text-xs text-gray-500"></span>
+        <span id="listHint" class="ml-auto text-[10px] text-gray-600"></span>
+      </div>
+      <div id="exampleList" class="px-4 py-3 flex flex-col gap-2 border-b border-gray-800"></div>
+
+      <!-- Selected example code -->
+      <div class="flex items-center px-4 py-2 border-b border-gray-800 bg-gray-900/60">
+        <span class="text-xs text-gray-500 mono">sample.js</span>
+        <span id="codeBadge" class="ml-auto text-[10px] text-gray-500 mono"></span>
+      </div>
+      <div id="codePanel" class="flex-1 overflow-auto text-sm leading-7 px-0 py-3 mono"></div>
+    </section>
+
+    <!-- Right: Visualization Panel -->
+    <section class="lg:w-1/2 flex flex-col overflow-auto">
+
+      <!-- Rule flowchart -->
+      <div class="flex items-center px-4 py-2 border-b border-gray-800 bg-gray-900/60">
+        <span id="flowLabel" class="text-xs text-gray-500"></span>
+        <span id="flowHint" class="ml-auto text-[10px] text-gray-600"></span>
+      </div>
+      <div id="flowchart" class="px-6 py-4 flex flex-col gap-2 border-b border-gray-800"></div>
+
+      <!-- Connection diagram + this result -->
+      <div class="flex items-center px-4 py-2 border-b border-gray-800 bg-gray-900/60">
+        <span id="connLabel" class="text-xs text-gray-500"></span>
+      </div>
+      <div class="px-6 py-4 border-b border-gray-800">
+        <div id="connection" class="connection-box flex items-center justify-center gap-3"></div>
+        <div id="thisResult" class="this-result"></div>
+      </div>
+
+      <!-- Description -->
+      <div class="px-6 py-4 flex-1">
+        <div id="description" class="rounded-lg bg-gray-900/80 border border-gray-800 p-4 text-sm text-gray-300 leading-relaxed min-h-[80px]"></div>
+      </div>
+
+      <!-- Console -->
+      <div class="px-6 pb-6">
+        <div id="consoleLabel" class="text-xs text-gray-600 mb-1 mono"></div>
+        <div id="consoleOutput" class="mono text-xs bg-black/40 rounded border border-gray-800 p-3 min-h-[40px] max-h-[80px] overflow-auto text-green-400"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="./visualization.js"></script>
+</body>
+</html>
