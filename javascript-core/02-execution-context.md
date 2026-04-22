@@ -2,7 +2,7 @@
 
 > _Javascript Core — AI를 잘 다루려면 내가 잘 알아야한다_
 
-> [참고코드](../examples/02-execution-context/index.js) | [시각화](../examples/02-execution-context/visualization.html)
+> [참고코드](./examples/02-execution-context/index.js) | [시각화](./examples/02-execution-context/visualization.html)
 
 ---
 

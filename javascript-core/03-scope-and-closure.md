@@ -2,7 +2,7 @@
 
 > _Javascript Core — AI를 잘 다루려면 내가 잘 알아야한다_
 
-> [참고코드](../examples/03-scope-and-closure/index.js) | [시각화](../examples/03-scope-and-closure/visualization.html)
+> [참고코드](./examples/03-scope-and-closure/index.js) | [시각화](./examples/03-scope-and-closure/visualization.html)
 
 ---
 

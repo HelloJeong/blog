@@ -2,7 +2,7 @@
 
 > _Javascript Core — AI를 잘 다루려면 내가 잘 알아야한다_
 
-> [참고코드](../examples/01-engine-runtime/index.js)
+> [참고코드](./examples/01-engine-runtime/index.js)
 
 ---
 
