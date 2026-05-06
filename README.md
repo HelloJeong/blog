@@ -2,6 +2,8 @@
 
 > AI 시대, 내가 잘 알아야 AI도 잘 쓴다 — JavaScript 핵심 원리 정리
 
+발행 블로그 → [velog.io/@jeongyk92](https://velog.io/@jeongyk92/posts)
+
 ---
 
 ## 목차
